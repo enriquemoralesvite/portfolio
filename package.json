@@ -4,12 +4,11 @@
     "description": "Portfolio website",
     "main": "index.html",
     "scripts": {
-      "start": "live-server"
+        "start": "live-server --port=8080"
     },
-    "dependencies": {},
     "devDependencies": {
-      "live-server": "^1.2.1"
+        "live-server": "^1.2.2"
     },
     "author": "Enrique Morales",
     "license": "MIT"
-  }
+}
