@@ -1,4 +1,3 @@
-// bot.js
 document.addEventListener('DOMContentLoaded', function () {
     // Crear el botón del bot
     const botButton = document.createElement('div');
@@ -9,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Crear el iframe del bot
     const botIframe = document.createElement('iframe');
     botIframe.id = 'bot-iframe';
-    botIframe.src = "https://bot.dialogflow.com/d529186b-6a62-4397-9296-3d19ca57edf5";
+    botIframe.src = "https://console.dialogflow.com/api-client/demo/embedded/d529186b-6a62-4397-9296-3d19ca57edf5";
     botIframe.style.display = 'none'; // Ocultar el iframe inicialmente
     botIframe.style.position = 'fixed';
     botIframe.style.bottom = '90px';
