@@ -288,6 +288,7 @@ body.projects-page .card-container {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+
 }
 
 body.projects-page .card-container::-webkit-scrollbar {
@@ -306,6 +307,15 @@ body.projects-page .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
+}
+
+body.projects-page .card-content {
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente en flex */
+    padding: 20px;
 }
 
 body.projects-page .card:hover {
