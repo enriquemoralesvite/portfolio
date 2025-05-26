@@ -1,0 +1,36 @@
+# Dependencias
+node_modules/
+package-lock.json
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos de IDE y editores
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Archivos de construcción y distribución
+dist/
+build/
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+.cache/
+
+# Archivos de respaldo
+*.bak
+*~ 
