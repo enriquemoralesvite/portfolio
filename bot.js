@@ -30,4 +30,24 @@ document.addEventListener('DOMContentLoaded', function () {
             botIframe.style.display = 'none';
         }
     });
+
+     // --- LÓGICA DEL CARRUSEL (sin cambios) ---
+     const container = document.querySelector('.card-container');
+     const prevBtn = document.getElementById('prevBtn');
+     const nextBtn = document.getElementById('nextBtn');
+ 
+     if (container) {
+         const getScrollAmount = () => {
+             const firstCard = container.querySelector('.card');
+             return firstCard ? firstCard.offsetWidth + 25 : 345;
+         };
+         
+         nextBtn.addEventListener('click', () => {
+             container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+         });
+ 
+         prevBtn.addEventListener('click', () => {
+             container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+         });
+     }
 });
