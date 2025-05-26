@@ -298,11 +298,14 @@ body.projects-page .card-container::-webkit-scrollbar {
 body.projects-page .card {
     flex: 0 0 320px;
     height: 400px;
+   
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-start;
     scroll-snap-align: start;
-    background-color: #ffffff;
+    background-color: rgb(100, 100, 124);
+    color: white;
+    font-family: var(--fuente-monstrerrat);
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -310,12 +313,12 @@ body.projects-page .card {
 }
 
 body.projects-page .card-content {
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente en flex */
-    padding: 20px;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 10px;
 }
 
 body.projects-page .card:hover {
