@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
-:root{
-    --color-primario:#000000;
-    --color-secundario:#F6F6F6;
-    --color-terciario:#16404D;
+:root {
+    --color-primario: #000000;
+    --color-secundario: #F6F6F6;
+    --color-terciario: #16404D;
     --color-hover: #4793AF;
 
     --fuente-monstrerrat: 'Montserrat', sans-serif;
@@ -23,12 +23,19 @@ body {
 }
 
 .header {
-    padding: 2% 0% 0% 15%;
+    width: 100%;
+    padding: 2% 5%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 100;
 }
 
 .header__menu {
     display: flex;
     gap: 80px;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__menu__link {
@@ -42,13 +49,13 @@ body {
 .presentacion {
     padding: 4.5% 15%;
     display: flex;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start;
     justify-content: space-between;
     gap: 80px;
 }
 
 .presentacion__contenido {
-    width: 50%; /* Adjust width as needed */
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -66,19 +73,18 @@ body {
 .presentacion__contenido__texto {
     font-size: 1.5rem;
     font-family: var(--fuente-monstrerrat);
-    line-height: 1.5; /* Improve readability */
+    line-height: 1.5;
     text-align: justify;
     margin-bottom: 20px;
 }
-.presentacion__contenido__texto__lista li{
+
+.presentacion__contenido__texto__lista li {
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.5; /* Improve readability */
+    line-height: 1.5;
     text-align: justify;
     margin-bottom: 15px;
-
 }
-
 
 .presentacion__enlaces {
     display: flex;
@@ -94,7 +100,7 @@ body {
 }
 
 .presentacion__enlaces__link {
-    width: 50%; /* Adjust width as needed */
+    width: 50%;
     text-align: center;
     border-radius: 8px;
     font-size: 24px;
@@ -116,37 +122,42 @@ body {
 }
 
 .linkedin-img {
-    margin-bottom: 1.5%; /* Adjust as needed */
+    margin-bottom: 1.5%;
 }
 
 .centered-image {
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
 }
+
 .home-image {
     margin-top: 50px;
-    width: 100%; /* Adjust width as needed */
+    width: 100%;
 }
+
 .work-image {
-    height: auto; /* Adjust the height as needed */
-    width: 100%; /* Maintain aspect ratio */
-    display: block; /* Ensure the image is displayed as a block element */
-    margin: 0 auto; /* Center the image horizontally */
+    height: auto;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
 }
+
 .adjusted-image {
-    margin-top: 40px; /* Adjust this value to move the image down */
-    width: 100%; /* Adjust width as needed */
+    margin-top: 40px;
+    width: 100%;
 }
+
 .presentacion__imagen {
-    width: 40%; /* Adjust width as needed */
+    width: 40%;
     display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .presentacion__imagen img {
-    max-width: 100%; /* Ensure the image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .footer {
@@ -159,53 +170,151 @@ body {
     font-weight: 400;
 }
 
-.presentacion__contenido__texto a{
+.presentacion__contenido__texto a {
     text-decoration: none;
     color: var(--color-terciario);
 }
 
-@media (max-width: 1200px){
-    
-    .header{
-        padding: 0%;
+/* Hamburguesa y menú móvil */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-terciario);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+}
 
+.header__menu__links {
+    display: flex;
+    gap: 80px;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 0%;
     }
-    .header__menu{
+    
+    .header__menu {
         justify-content: center;
     }
+    
     .presentacion {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
-    }    
-    .presentacion__contenido{
+    }
+    
+    .presentacion__contenido {
         width: auto;
         padding: 5%;
-    }    
-    .presentacion__imagen{
+    }
+    
+    .presentacion__imagen {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .header__menu__links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--color-primario);
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 20px 20px;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+    
+    .header__menu__links.active {
+        left: 0;
+    }
+    
+    .header {
+        padding: 20px !important;
+    }
+    
+    .header__menu {
+        justify-content: flex-end;
+    }
+    
+    /* Ajustes específicos para projects.html en móvil */
+    body.projects-page .header {
+        display: block;
+        padding: 20px !important;
+    }
+    
+    body.projects-page .presentacion,
+    body.projects-page .header,
+    body.projects-page .presentacion {
+        padding: 4.5% 5%;
+    }
+    
+    body.projects-page .carousel-button {
+        width: 40px;
+        height: 40px;
+    }
+    body.projects-page .header__menu {
+        justify-content: flex-end;
+        padding-right: 20px;
+    }
+
+    body.projects-page .header__menu__links {
+        display: none;
+    }
+    
+    body.projects-page .header__menu__links.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__menu__links {
+        width: 100%;
+    }
+    
+    body.projects-page .carousel-button {
+        display: none;
+    }
+    
+    body.projects-page .card {
+        flex: 0 0 85%;
     }
 }
 
 @media (max-width: 400px) {
     .header__menu {
-        flex-direction: column; /* Cambia la dirección del flex a columna para dispositivos muy pequeños */
-        align-items: center; /* Centra los botones horizontalmente */
+        flex-direction: column;
+        align-items: center;
     }
+    
     .presentacion {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
-    
     }
-    .presentacion__contenido{
+    
+    .presentacion__contenido {
         width: auto;
         padding: 5%;
     }
-
+    
     .header__menu a {
-        width: 100%; /* Asegura que los botones ocupen todo el ancho disponible */
-        text-align: center; /* Centra el texto de los botones */
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -243,6 +352,7 @@ body {
     background-color: var(--color-secundario);
     z-index: 999;
 }
+
 /* Estilos específicos para projects.html */
 body.projects-page {
     display: flex;
@@ -252,9 +362,9 @@ body.projects-page {
 
 body.projects-page .header {
     padding: 2% 0;
-    display: flex;
-    justify-content: center;
     width: 100%;
+    position: relative;
+    z-index: 100;
 }
 
 body.projects-page .presentacion {
@@ -270,7 +380,6 @@ body.projects-page .presentacion__contenido {
     max-width: 1200px;
 }
 
-/* Estilos del carrusel - Versión corregida */
 body.projects-page .carousel-wrapper {
     width: 100%;
     max-width: 1200px;
@@ -288,7 +397,6 @@ body.projects-page .card-container {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-
 }
 
 body.projects-page .card-container::-webkit-scrollbar {
@@ -298,7 +406,6 @@ body.projects-page .card-container::-webkit-scrollbar {
 body.projects-page .card {
     flex: 0 0 320px;
     height: 400px;
-   
     display: flex;
     flex-direction: column;
     justify-content: space-start;
@@ -316,7 +423,7 @@ body.projects-page .card-content {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: center;
     padding: 10px;
 }
@@ -349,27 +456,4 @@ body.projects-page .carousel-button.prev {
 
 body.projects-page .carousel-button.next {
     right: 20px;
-}
-
-/* Media queries para el carrusel */
-@media (max-width: 768px) {
-    body.projects-page .header,
-    body.projects-page .presentacion {
-        padding: 4.5% 5%;
-    }
-    
-    body.projects-page .carousel-button {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    body.projects-page .carousel-button {
-        display: none;
-    }
-    
-    body.projects-page .card {
-        flex: 0 0 85%;
-    }
 }

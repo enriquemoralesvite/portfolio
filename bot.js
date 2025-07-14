@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
      const container = document.querySelector('.card-container');
      const prevBtn = document.getElementById('prevBtn');
      const nextBtn = document.getElementById('nextBtn');
+     
  
      if (container) {
          const getScrollAmount = () => {
@@ -50,4 +51,18 @@ document.addEventListener('DOMContentLoaded', function () {
              container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
          });
      }
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuLinks = document.querySelector('.header__menu__links');
+
+    if (menuToggle && menuLinks) {
+        menuToggle.addEventListener('click', function () {
+            menuLinks.classList.toggle('active');
+        });
+        // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.header__menu__link').forEach(link => {
+        link.addEventListener('click', () => {
+            menuLinks.classList.remove('active');
+        });
+    });
+    }
 });
