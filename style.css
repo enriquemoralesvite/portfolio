@@ -113,7 +113,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 18px;
 }
 
 .presentacion__enlaces__link:hover {
@@ -139,6 +139,14 @@ body {
     width: 100%;
     display: block;
     margin: 0 auto;
+    margin-left: 10px;
+}
+
+.em-icon{
+    margin-left: 30px;
+}
+.em-link {
+  gap: 1px; /* controla solo el espacio entre ícono y texto del EM */
 }
 
 .adjusted-image {
